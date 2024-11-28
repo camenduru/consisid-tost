@@ -144,7 +144,6 @@ def generate_local(input):
     for batch_idx in range(batch_size):
         pt_image = latents[batch_idx]
         pt_image = torch.stack([pt_image[i] for i in range(pt_image.shape[0])])
-        pt_image = pt_image.unsqueeze(0)
         image_np = VaeImageProcessor.pt_to_numpy(pt_image)
         image_pil = VaeImageProcessor.numpy_to_pil(image_np)
         batch_video_frames.append(image_pil)
