@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+  "type": "object",
+  "properties": {
+    "readme": {
+      "type": "string",
+      "title": "Identity-Preserving Text-to-Video Generation by Frequency Decomposition",
+      "author": "Shenghai Yuan, Jinfa Huang, Xianyi He, Yunyuan Ge, Yujun Shi, Liuhan Chen, Jiebo Luo, Li Yuan",
+      "page": "https://pku-yuangroup.github.io/ConsisID/",
+      "code": "https://github.com/PKU-YuanGroup/ConsisID",
+      "paper": "https://arxiv.org/abs/2411.17440",
+      "jupyter": "https://github.com/camenduru/consisid-tost",
+      "api": "https://github.com/camenduru/tost-api-examples/blob/main/v1/consisid.ipynb",
+      "tags": [
+        "Image to Video"
+      ],
+      "widget": "readme"
+    },
+    "upload": {
+      "type": "string",
+      "widget": "upload",
+      "upload_url": "https://litterbox.catbox.moe/resources/internals/api.php",
+      "property": "input_image"
+    },
+    "input_image": {
+      "type": "string",
+      "description": "Image URL",
+      "widget": "textarea"
+    },
+    "prompt": {
+      "type": "string",
+      "description": "Prompt",
+      "widget": "textarea"
+    },
+    "num_inference_steps": {
+      "type": "integer",
+      "description": "Num Inference Steps"
+    },
+    "guidance_scale": {
+      "type": "number",
+      "description": "Guidance scale"
+    },
+    "seed": {
+      "type": "integer",
+      "description": "Seed"
+    },
+    "example": {
+      "type": "string",
+      "image1": "https://fakeimg.pl/512x512/282828/eae0d0/?text=input#.png",
+      "image2": "https://files.catbox.moe/wy4gq7.jpg",
+      "image3": "https://fakeimg.pl/512x512/282828/eae0d0/?text=output#.png",
+      "image4": "https://files.catbox.moe/ri8l7s.mp4",
+      "video_aspect_ratio": "70%",
+      "widget": "example"
+    }
+  },
+  "buttons": [
+    {
+      "id": "enter",
+      "label": "🥪 Enter"
+    }
+  ]
+}
