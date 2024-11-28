@@ -122,12 +122,21 @@ def generate_local(input):
                                                                             face_main_model, device, dtype, id_image, 
                                                                             original_id_image=id_image, is_align_face=True, 
                                                                             cal_uncond=False)
-    kps_cond = face_kps if is_kps else None
+    if is_kps:
+        kps_cond = face_kps
+    else:
+        kps_cond = None
+    tensor = align_crop_face_image.cpu().detach()
+    tensor = tensor.squeeze()
+    tensor = tensor.permute(1, 2, 0)
+    tensor = tensor.numpy() * 255
+    tensor = tensor.astype(np.uint8)
+    image  = ImageOps.exif_transpose(Image.fromarray(tensor))
     prompt = prompt.strip('"')
     generator = torch.Generator(device).manual_seed(seed) if seed else None
     latents = pipe(
         prompt=prompt,
-        image=image_input,
+        image=image,
         num_videos_per_prompt=1,
         num_inference_steps=num_inference_steps,
         num_frames=49,
