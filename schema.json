@@ -9,7 +9,7 @@
       "page": "https://pku-yuangroup.github.io/ConsisID/",
       "code": "https://github.com/PKU-YuanGroup/ConsisID",
       "paper": "https://arxiv.org/abs/2411.17440",
-      "jupyter": "https://github.com/camenduru/consisid-tost",
+      "jupyter": "https://github.com/camenduru/ConsisID-jupyter",
       "api": "https://github.com/camenduru/tost-api-examples/blob/main/v1/consisid.ipynb",
       "tags": [
         "Image to Video"
